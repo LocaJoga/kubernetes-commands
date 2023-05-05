@@ -1,7 +1,7 @@
 # kubernetes-commands
 ## Kubectl Commands with alias
 
- ```Unix
+ ```Linux
  
 alias k='kubectl'
 alias kg='kubectl get'
