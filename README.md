@@ -1,7 +1,8 @@
 # kubernetes-commands
 ## Kubectl Commands with alias
 
-
+ ---
+ 
 alias k='kubectl'
 alias kg='kubectl get'
 alias kgpod='kubectl get pod'
