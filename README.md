@@ -1,7 +1,7 @@
 # kubernetes-commands
 ## Kubectl Commands with alias
 
- '''Unix
+ ```Unix
  
 alias k='kubectl'
 alias kg='kubectl get'
@@ -16,4 +16,4 @@ alias kgdep='kubectl get deployments'
 alias kl='kubectl logs'
 alias kei='kubectl exec -it'
 
-'''
+```
