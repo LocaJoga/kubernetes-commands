@@ -16,3 +16,4 @@ alias kgdep='kubectl get deployments'
 alias kl='kubectl logs'
 alias kei='kubectl exec -it'
 
+___
