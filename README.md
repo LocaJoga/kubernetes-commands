@@ -18,7 +18,7 @@ alias kei='kubectl exec -it'
 
 ```
 ### kubectl command to rename context name
-'
+
 ```
 kubectl config rename-context <old_name> <new_name>
 ```
