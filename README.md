@@ -38,7 +38,9 @@ kubectl config use-context <my-cluster-name>
 ```
 
 to rename context name
+```
 kubectl config rename-context <old_name> <new_name>
+```
 
 delete the context
 ```
@@ -46,16 +48,9 @@ kubectl config delete-context <context_name>
 ```
 
 ### some useful Kubectl patch commands
-It will patch the `HPA` count of all the deployment in mentioned namespace. You can use `minReplicas` and `maxReplicas` to change the min and max count under `spec` section.
+It will patch the hpa count of existing deployment file
 ```  
 kubectl patch hpa $(kubectl get hpa -n <namespace> -o name | awk -F "/" '{ print $2 }') -p '{"spec":{"minReplicas": '<replica_count>'}}' -n <namespace>
 ```
 
-To change the `HPA` replica count of particular deloyment 
-```
-kubectl patch hpa <deployment_name_of_scaler> -p '{"spec":{"maxReplicas": '<replica_count>'}}' -n <namespace>
-```
-To patch deployemt image
-```
-kubectl patch deploy <deployment_name> -p '{"image":"'<image_name>'"}' -n <namespace>
-```
+
