@@ -24,7 +24,7 @@ alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 
 
 List of general Kubernetes commands:
 
-- [CONTEXT] (#context)
+- [CONTEXT](#context)
 - [PODS](#pods)
 - [Create Deployments](#create-deployments)
 - [Scaling PODs](#scaling-pods)
@@ -39,9 +39,7 @@ List of general Kubernetes commands:
 - [Taints and Tolerations](#tains_and_tolerations)
 - [Troubleshooting](#troubleshooting)
 - [Role Based Access Control (RBAC)](#role_based_access_control)
-- [Security Contexts](#security_contexts)
-- [Pod Security Policies](#pod_security_policies)
-- [Network Policies](#network_policies)
+- [Resources](#resources)
 
 
 ## CONTEXT
@@ -128,7 +126,7 @@ Expose PODs as services (creates endpoints)
 $ kubectl expose deployment/<deployment_name> --name=<service_name> --port=<port> --type=<ClusterIP/NodePort>
 ```
 
-If type is NodePort then you have to mention the nodePort in the yaml manually. Below command will give you the yaml in which you can add nodePort and then apply it.
+If type is `NodePort` then you have to mention the nodePort in the yaml manually. Below command will give you the yaml in which you can add `nodePort` and then apply it.
 
 ```
 $ kubectl expose deployment test --name=test-service --port=80 --type=NodePort --dry-run=client -o yaml
@@ -164,13 +162,13 @@ $ kubectl get configmap test -o yaml
 List DNS-PODs:
 
 ```
-$ kubectl get pods --all-namespaces |grep dns
+$ kubectl get pods --all-namespaces | grep dns
 ```
 
 ## Ingress
 
 ### Create a single ingress called 'simple' that directs requests to foo.com/bar to svc
-  #### svc1:8080 with a tls secret "my-cert"
+> #### svc1:8080 with a tls secret "my-cert"
 ```
 $ kubectl create ingress simple --rule="foo.com/bar=svc1:8080,tls=my-cert"
 $ kubectl get ingress
@@ -186,7 +184,7 @@ $ kubectl get hpa
 $ kubectl autoscale --help
 ```
 
-### Kubectl HPA patch commands 
+### Kubectl `HPA` patch commands 
 It will patch the `HPA` count of all the deployment in mentioned namespace. You can use `minReplicas` and `maxReplicas` to change the min and max count under `spec` section.
 ```  
 kubectl patch hpa $(kubectl get hpa -n <namespace> -o name | awk -F "/" '{ print $2 }') -p '{"spec":{"minReplicas": '<replica_count>'}}' -n <namespace>
