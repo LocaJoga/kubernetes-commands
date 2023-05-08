@@ -41,7 +41,9 @@ kubectl config delete-context <context_name>
 
 ```
 
-some useful Kubectl `patch` commands
-  
-  kubectl patch hpa $(kubectl get hpa -n <namespace> -o name | awk -F "/" '{ print $2 }') -p '{"spec":{"minReplicas": '<replica_count>'}}' -n <namespace>!
+### some useful Kubectl `patch` commands
+``` 
 
+kubectl patch hpa $(kubectl get hpa -n <namespace> -o name | awk -F "/" '{ print $2 }') -p '{"spec":{"minReplicas": '<replica_count>'}}' -n <namespace>
+
+```
