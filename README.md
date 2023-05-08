@@ -59,3 +59,9 @@ To patch deployemt image
 ```
 kubectl patch deploy <deployment_name> -p '{"image":"'<image_name>'"}' -n <namespace>
 ```
+
+### some useful Kubectl get commands
+This command will display the `CPU-LIMIT`   `CPU-REQUESTS`   `MEMORY-LIMIT`   `MEMORY-REQUESTS` of deploymemts in mentioned namespace
+```
+kubectl get deploy -n <namespace> -o custom-columns='Name:metadata.name,CPU-LIMIT:spec.template.spec.containers[].resources.limits.cpu,CPU-REQUESTS:spec.template.spec.containers[].resources.requests.cpu,MEMORY-LIMIT:spec.template.spec.containers[].resources.limits.memory,MEMORY-REQUESTS:spec.template.spec.containers[].resources.requests.memory'
+```
