@@ -24,19 +24,19 @@ alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 
 ### kubectl config commands 
 
 ```
-# _display list of contexts
+// display list of contexts
 kubectl config get-contexts    
 
-# _display the current-context
+// display the current-context
 kubectl config current-context
 
-# _set the default context to my-cluster-name
+// set the default context to my-cluster-name
 kubectl config use-context <my-cluster-name>
 
-# to rename context name
+// to rename context name
 kubectl config rename-context <old_name> <new_name>
 
-# _delete the context
+// delete the context
 kubectl config delete-context <context_name>
 
 ```
