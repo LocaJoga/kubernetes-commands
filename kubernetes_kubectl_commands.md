@@ -1,4 +1,4 @@
-# Kubectl Commands with alias
+## Kubectl Alias
 
  ```Linux
  
